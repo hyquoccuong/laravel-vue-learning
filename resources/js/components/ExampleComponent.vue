@@ -6,6 +6,14 @@
                     <div class="card-header"><strong> Laravel Vue JS Infinite Scroll - ItSolutionStuff.com</strong></div>
 
                     <div class="card-body">
+                         <textarea
+                             name="article_ckeditor"
+                             class="form-control"
+                             rows="3"
+                             id="article_ckeditor"
+                             placeholder="Nội dung">
+                        </textarea>
+
                         <div>
 
                             <p v-for="item in list">
@@ -14,6 +22,7 @@
                             <infinite-loading @distance="1" @infinite="infiniteHandler"></infinite-loading>
 
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -23,9 +32,11 @@
 
 <script>
     import InfiniteLoading from 'vue-infinite-loading';
+
+
     export default {
          mounted() {
-            console.log('Component mounted.')
+             console.log('Component mounted.')
         },
         data() {
             return {
@@ -48,7 +59,7 @@
                 });
 
                 this.page = this.page + 1;
-            },
-        },
+            }
+        }
     }
 </script>

@@ -13,5 +13,16 @@
     <example-component></example-component>
 </div>
 <script src="{{asset('js/app.js')}}" ></script>
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script>
+    var CSRFToken = $('meta[name="csrf-token"]').attr('content');
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=' + CSRFToken,
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=' + CSRFToken,
+    };
+    CKEDITOR.replace('article_ckeditor', options);
+</script>
 </body>
 </html>
